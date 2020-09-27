@@ -1,0 +1,64 @@
+#include <GL/glut.h>  
+void display() {
+   glClear(GL_COLOR_BUFFER_BIT);   
+   glBegin(GL_QUADS);              
+      glColor3f(0.968f, 0.133f, 0.149f); 
+      glVertex2f(-0.8f, 0.1f);     
+      glVertex2f(-0.2f, 0.1f);     
+      glVertex2f(-0.2f, 0.7f);
+      glVertex2f(-0.8f, 0.7f);
+   glEnd();
+   glBegin(GL_TRIANGLES);          
+      glColor3f(0.137f, 0.039f, 0.439f); 
+      glVertex2f(0.1f, 0.4f);
+      glVertex2f(0.7f, 0.4f);
+      glVertex2f(0.4f, 0.8f); 
+   glEnd();
+   glBegin(GL_LINES); 
+      glColor3f(0.090f, 0.592f, 0.101f); 
+      glVertex2f(-0.1f, -0.2f);
+      glVertex2f(-0.7f, -0.2f);
+      glVertex2f(-0.1f,  0.0f);
+      glVertex2f(-0.7f,  0.0f);
+    glEnd();
+   glBegin(GL_LINE_STRIP); 
+      glColor3f(0.090f, 0.592f, 0.101f); 
+      glVertex2f(0.0f, 0.0f);
+      glVertex2f(0.2f, 0.3f);
+      glVertex2f(0.2f,  -0.2f);
+      glVertex2f(0.1f,  -0.2f);
+    glEnd();
+  
+   
+   glBegin(GL_POLYGON);            
+      glColor3f(0.968f, 0.701f, 0.133f); 
+      glVertex2f(0.2f, -0.3f);
+      glVertex2f(0.4f, -0.3f);
+      glVertex2f(0.6f, -0.45f);
+      glVertex2f(0.4f, -0.5f);
+      glVertex2f(0.2f, -0.5f);
+      
+   glEnd();
+   glBegin(GL_LINE_LOOP);
+      glColor3f(0.592f, 0.090f, 0.490f); 
+      glVertex2f(-0.6f, -0.6f);
+      glVertex2f(-0.6f, -0.5f);
+      glVertex2f(-0.5f, -0.4f);
+      glVertex2f(-0.4f, -0.4f);
+      glVertex2f(-0.3f, -0.5f);
+      glVertex2f(-0.3f, -0.5f);
+      glVertex2f(-0.3f, -0.6f);
+      glVertex2f(-0.4f, -0.7f);
+      glVertex2f(-0.5f, -0.7f);
+glEnd();
+glFlush();  
+}
+int main(int argc, char** argv) {
+   glutInit(&argc, argv);          
+   glutCreateWindow("Primitive");  
+   glutInitWindowSize(1000, 1000);   
+   glutInitWindowPosition(200, 200); 
+   glutDisplayFunc(display);                            
+   glutMainLoop();                 
+   return 0;
+}
