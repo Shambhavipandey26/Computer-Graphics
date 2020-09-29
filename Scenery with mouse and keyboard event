@@ -1,0 +1,399 @@
+	#include <GL/glut.h>
+#include <math.h>
+
+void display(){
+glClear(GL_COLOR_BUFFER_BIT);
+
+
+glBegin(GL_QUADS);
+glColor3f(0.647, 0.913, 0.882);//for making sky
+glVertex2f(-1,0.3);
+glVertex2f(-1,1);
+glVertex2f(1,1);
+glVertex2f(1,0.3);
+glEnd();
+
+
+glBegin(GL_POLYGON);//for making sun
+glColor3f(0.972, 0.933, 0.105);
+glVertex2f(-0.1,0.7);
+glVertex2f(-0.1,0.8);
+glVertex2f(0,0.9);
+glVertex2f(0.1,0.9);
+glVertex2f(0.2,0.8);
+glVertex2f(0.2,0.7);
+glVertex2f(0.1,0.6);
+glVertex2f(0,0.6);
+glEnd();
+
+
+glBegin(GL_QUADS);
+glColor3f(0.623, 0.968, 0.290); //for making  ground
+glVertex2f(-1,0.3);
+glVertex2f(1,0.3);
+glVertex2f(1,-1);
+glVertex2f(-1,-1);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);
+glColor3f(0.411, 0.211, 0.105);//for making hill1
+glVertex2f(-1,0.3);
+glVertex2f(-0.75,0.6);
+glVertex2f(-0.5,0.3);
+glEnd();
+
+
+
+
+glBegin(GL_TRIANGLES);
+glColor3f(0.411, 0.211, 0.105);//for making hill2
+glVertex2f(-0.5,0.3);
+glVertex2f(-0.25,0.6);
+glVertex2f(0,0.3);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);
+glColor3f(0.411, 0.211, 0.105);//for making hill3
+glVertex2f(0,0.3);
+glVertex2f(0.25,0.6);
+glVertex2f(0.5,0.3);
+glEnd();
+
+glBegin(GL_TRIANGLES);
+glColor3f(0.411, 0.211, 0.105);//for making hill4
+glVertex2f(0.5,0.3);
+glVertex2f(0.75,0.6);
+glVertex2f(1,0.3);
+glEnd();
+
+
+glBegin(GL_QUADS);//for making river
+glColor3f(0.223, 0.474, 0.937);
+glVertex2f(0.2,0.3);
+glVertex2f(-0.2,0.3);
+glVertex2f(-0.4,-1);
+glVertex2f(-0.0,-1);
+glEnd();
+
+
+glFlush();
+}
+
+
+
+
+
+
+void mouse(int button,int state,int x,int y)
+{
+switch(button)
+{
+case GLUT_LEFT_BUTTON:
+if(state==GLUT_DOWN)
+                    {
+                   
+                    glBegin(GL_QUADS);
+                    glColor3f(0,0,0);
+                    glVertex2f(-1,0.3);
+                    glVertex2f(-1,1);
+                    glVertex2f(1,1);
+                    glVertex2f(1,0.3);
+                    glEnd();
+
+                    glBegin(GL_POLYGON);//for making moon
+                    glColor3f(1,1,1);
+                    glVertex2f(0,0.6);
+                    glVertex2f(-0.1,0.7);
+                    glVertex2f(-0.1,0.8);
+                    glVertex2f(0,0.9);
+                    glVertex2f(0.05,0.9);
+                    glVertex2f(0.05,0.6);
+                    glVertex2f(0.,0.6);
+                    glEnd();
+
+
+                    glBegin(GL_TRIANGLES);
+                    glColor3f(0.411, 0.211, 0.105);//for making hill1
+                    glVertex2f(-1,0.3);
+                    glVertex2f(-0.75,0.6);
+                    glVertex2f(-0.5,0.3);
+                    glEnd();
+
+
+
+
+                    glBegin(GL_TRIANGLES);
+                    glColor3f(0.411, 0.211, 0.105);//for making hill2
+                    glVertex2f(-0.5,0.3);
+                    glVertex2f(-0.25,0.6);
+                    glVertex2f(0,0.3);
+                    glEnd();
+
+
+                    glBegin(GL_TRIANGLES);
+                    glColor3f(0.411, 0.211, 0.105);//for making hill3
+                    glVertex2f(0,0.3);
+                    glVertex2f(0.25,0.6);
+                   glVertex2f(0.5,0.3);
+                    glEnd();
+
+                    glBegin(GL_TRIANGLES);
+                    glColor3f(0.411, 0.211, 0.105);//for making hill4
+                    glVertex2f(0.5,0.3);
+                    glVertex2f(0.75,0.6);
+                    glVertex2f(1,0.3);
+                    glEnd();
+
+
+                    glBegin(GL_QUADS);
+                    glColor3f(0.137, 0.329, 0.109); //for making ground
+                    glVertex2f(-1,0.3);
+                    glVertex2f(1,0.3);
+                    glVertex2f(1,-1);
+                    glVertex2f(-1,-1);
+                    glEnd();
+
+                   glBegin(GL_QUADS);//for making river
+                   glColor3f(0.145, 0.427, 0.956);
+                   glVertex2f(0.2,0.3);
+                   glVertex2f(-0.2,0.3);
+                   glVertex2f(-0.4,-1);
+                   glVertex2f(-0.0,-1);
+                   glEnd();
+
+
+
+glBegin(GL_QUADS);//for making home
+glColor3f(0.584, 0.090, 0.058);
+glVertex2f(-0.5,-0.3);
+glVertex2f(-0.8,-0.3);
+glVertex2f(-0.8,-0.7);
+glVertex2f(-0.5,-0.7);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);//for making home
+glColor3f(0.549, 0.254, 0.133);
+glVertex2f(-0.4,-0.3);
+glVertex2f(-0.65,0);
+glVertex2f(-0.9,-0.3);
+glEnd();
+
+
+
+glBegin(GL_QUADS);//for making home2
+glColor3f(0.584, 0.090, 0.058);
+glVertex2f(0.5,-0.3);
+glVertex2f(0.8,-0.3);
+glVertex2f(0.8,-0.7);
+glVertex2f(0.5,-0.7);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);//for making home2
+glColor3f(0.549, 0.254, 0.133);
+glVertex2f(0.4,-0.3);
+glVertex2f(0.65,0);
+glVertex2f(0.9,-0.3);
+glEnd();
+
+                   
+                    glFlush();
+
+                    }
+break;
+default:
+break;
+}
+}
+
+
+
+
+void keyb(char key,int x,int y)
+{
+switch(key)
+
+{
+
+
+     case 'a' :
+{
+glBegin(GL_QUADS);//for making home
+glColor3f(0.584, 0.090, 0.058);
+glVertex2f(-0.5,-0.3);
+glVertex2f(-0.8,-0.3);
+glVertex2f(-0.8,-0.7);
+glVertex2f(-0.5,-0.7);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);//for making home
+glColor3f(0.549, 0.254, 0.133);
+glVertex2f(-0.4,-0.3);
+glVertex2f(-0.65,0);
+glVertex2f(-0.9,-0.3);
+glEnd();
+
+glBegin(GL_QUADS);//for making home2
+glColor3f(0.584, 0.090, 0.058);
+glVertex2f(0.5,-0.3);
+glVertex2f(0.8,-0.3);
+glVertex2f(0.8,-0.7);
+glVertex2f(0.5,-0.7);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);//for making home2
+glColor3f(0.549, 0.254, 0.133);
+glVertex2f(0.4,-0.3);
+glVertex2f(0.65,0);
+glVertex2f(0.9,-0.3);
+glEnd();
+
+glBegin(GL_QUADS);
+glColor3f(0.623, 0.968, 0.290); //for making ground
+glVertex2f(-1,0.3);
+glVertex2f(1,0.3);
+glVertex2f(1,-1);
+glVertex2f(-1,-1);
+glEnd();
+
+
+}
+case 's': case 'S':
+{
+                   
+                  glBegin(GL_QUADS);
+                  glColor3f(0.647, 0.913, 0.882);//for making sky
+                  glVertex2f(-1,0.3);
+                  glVertex2f(-1,1);
+                  glVertex2f(1,1);
+                  glVertex2f(1,0.3);
+         glEnd();
+
+
+                  glBegin(GL_POLYGON);//for making sun
+                  glColor3f(0.972, 0.933, 0.105);
+                  glVertex2f(-0.1,0.7);
+                  glVertex2f(-0.1,0.8);
+                  glVertex2f(0,0.9);
+                  glVertex2f(0.1,0.9);
+                  glVertex2f(0.2,0.8);
+                  glVertex2f(0.2,0.7);
+                  glVertex2f(0.1,0.6);
+                  glVertex2f(0,0.6);
+                  glEnd();
+
+
+ glBegin(GL_TRIANGLES);
+glColor3f(0.411, 0.211, 0.105);//for making hill1
+glVertex2f(-1,0.3);
+glVertex2f(-0.75,0.6);
+glVertex2f(-0.5,0.3);
+glEnd();
+
+
+
+
+glBegin(GL_TRIANGLES);
+glColor3f(0.411, 0.211, 0.105);//for making hill2
+glVertex2f(-0.5,0.3);
+glVertex2f(-0.25,0.6);
+glVertex2f(0,0.3);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);
+glColor3f(0.411, 0.211, 0.105);//for making hill3
+glVertex2f(0,0.3);
+glVertex2f(0.25,0.6);
+glVertex2f(0.5,0.3);
+glEnd();
+
+glBegin(GL_TRIANGLES);
+glColor3f(0.411, 0.211, 0.105);//for making hill4
+glVertex2f(0.5,0.3);
+glVertex2f(0.75,0.6);
+glVertex2f(1,0.3);
+glEnd();
+
+
+                 glBegin(GL_QUADS);//for making river
+                 glColor3f(0.223, 0.474, 0.937);
+                 glVertex2f(0.2,0.3);
+                 glVertex2f(-0.2,0.3);
+                 glVertex2f(-0.4,-1);
+                 glVertex2f(-0.0,-1);
+                 glEnd();
+
+
+               
+glBegin(GL_QUADS);//for making home
+glColor3f(0.584, 0.090, 0.058);
+glVertex2f(-0.5,-0.3);
+glVertex2f(-0.8,-0.3);
+glVertex2f(-0.8,-0.7);
+glVertex2f(-0.5,-0.7);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);//for making home
+glColor3f(0.549, 0.254, 0.133);
+glVertex2f(-0.4,-0.3);
+glVertex2f(-0.65,0);
+glVertex2f(-0.9,-0.3);
+glEnd();
+
+
+
+glBegin(GL_QUADS);//for making home2
+glColor3f(0.584, 0.090, 0.058);
+glVertex2f(0.5,-0.3);
+glVertex2f(0.8,-0.3);
+glVertex2f(0.8,-0.7);
+glVertex2f(0.5,-0.7);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);//for making home2
+glColor3f(0.549, 0.254, 0.133);
+glVertex2f(0.4,-0.3);
+glVertex2f(0.65,0);
+glVertex2f(0.9,-0.3);
+glEnd();
+
+         glFlush();
+}
+break;
+default:
+break;
+}
+}
+
+
+
+int main(int argc, char** argv) {
+   glutInit(&argc, argv);  
+   glutInitDisplayMode(GLUT_SINGLE| GLUT_RGB);      
+   glutInitWindowSize(1000, 1000);  
+   glutInitWindowPosition(0, 0);
+   glutCreateWindow("Scenery");
+   glutDisplayFunc(display);    
+      glutMouseFunc(mouse);  
+      glutKeyboardFunc(keyb);                        
+   glutMainLoop();                
+   return 0;
+}
+	
+	
+
+
+
+
+
+
+
+
