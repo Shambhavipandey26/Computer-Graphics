@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+#include <GL/glut.h>
+void init(){
+gluOrtho2D(-20,20,-20,20);
+}
+
+void display(void){
+float x,y,t;
+int xc,yc,r,i;
+printf("Enter center of the circle");
+scanf("%d %d",&xc,&yc);
+printf("Enter radius of the circle");
+scanf("%d",&r);
+glBegin(GL_POLYGON);
+glColor3f(1,1,1);
+for(i=0;i<360;i++){
+t=(3.14*i)/180;
+x=xc+(r*cos(t));
+y=yc+(r*sin(t));
+glVertex2d(x,y);
+}
+glEnd();
+glFlush();
+}
+
+int main(int argc, char** argv)
+{
+glutInit(&argc, argv);
+glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize (800, 800);
+glutInitWindowPosition (200, 200);
+glutCreateWindow ("Circle using polar equation");
+init ();
+glutDisplayFunc(display);
+glutMainLoop();
+return 0;
+}
